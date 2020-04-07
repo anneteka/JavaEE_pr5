@@ -11,21 +11,19 @@ public class IndexController {
     ArrayList<Book> books;
 
     @RequestMapping("/booklist")
-    public String booklist() {
+    public String booklist(Model model) {
+        model.addAttribute("bookStorage", Storage.bookList());
         return "index";
     }
 
     @PostMapping("/add-book")
-    public String myPost(@ModelAttribute Book book, Model model) {
-//        Storage.addBook(new Book(title, author, ibsn));
+    public String myPost(@ModelAttribute("book") Book book, Model model) {
         Storage.addBook(book);
-        model.addAttribute("bookStorage", Storage.bookList());
         return "redirect:/booklist";
     }
 
     @GetMapping("/books")
-    public String myBooks(@ModelAttribute Book formBook, Model model) {
-        model.addAttribute("bookStorage", Storage.bookList());
+    public String myBooks(Model model) {
         model.addAttribute("book", new Book());
         return "books";
     }

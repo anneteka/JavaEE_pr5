@@ -6,7 +6,7 @@
 </head>
 <body>
 <form action="#" th:action="@{/add-book}" th:object="${book}"  method="post">
-    Назва книги: <input type="text" th:field="*{title}" name="title" id="title"><br>
+    Назва книги: <input type="text" th:field="*{title}" th:value="title" name="title" id="title"><br>
     Автор: <input type="text" th:field="*{author}" name="author" id="author"><br>
     IBSN: <input type="text"  th:field="*{ibsn}" name="ibsn" id="ibsn"><br>
     <input type="submit" value="Submit">

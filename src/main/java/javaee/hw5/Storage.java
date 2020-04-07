@@ -12,12 +12,6 @@ class Storage {
     {
         books.add(book);
     }
-    static void addBook(String json)
-    {
-        JSONObject jsonBook = new JSONObject(new JSONTokener(json));
-
-        books.add(new Book(jsonBook.getString("title"),jsonBook.getString("author"), jsonBook.getString("ibsn")));
-    }
     static ArrayList<Book> bookList()
     {
         return  books;

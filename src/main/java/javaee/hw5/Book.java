@@ -5,15 +5,6 @@ public class Book {
     private String author;
     private String ibsn;
 
-    public Book() {
-    }
-
-    public Book(String title, String author, String ibsn) {
-        this.title = title;
-        this.author = author;
-        this.ibsn = ibsn;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -26,12 +17,15 @@ public class Book {
         return ibsn;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", ibsn='" + ibsn + '\'' +
-                '}';
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setIbsn(String ibsn) {
+        this.ibsn = ibsn;
     }
 }

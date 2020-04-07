@@ -12,11 +12,13 @@
     <td>Автор</td>
     </thead>
     <tr th:each="book: ${bookStorage}">
-        <td th:text="${book.book_name}"/>
-        <td th:text="${book.isbn}"/>
+        <td th:text="${book.title}"/>
+        <td th:text="${book.ibsn}"/>
         <td th:text="${book.author}"/>
     </tr>
 </table>
+<!--<p th:text="'id: ' + ${book.title}" />-->
+<!--<p th:text="'content: ' + ${book.author}" />-->
 <br>
 </body>
 </html>
