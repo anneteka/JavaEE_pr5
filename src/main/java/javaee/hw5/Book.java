@@ -5,6 +5,9 @@ public class Book {
     private String author;
     private String ibsn;
 
+    public Book() {
+    }
+
     public Book(String title, String author, String ibsn) {
         this.title = title;
         this.author = author;
@@ -21,5 +24,14 @@ public class Book {
 
     public String getIbsn() {
         return ibsn;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", ibsn='" + ibsn + '\'' +
+                '}';
     }
 }
