@@ -1,9 +1,9 @@
-package javaee.hw5;
-import org.json.JSONObject;
-import org.json.JSONTokener;
+package javaee.hw5.repository;
+import javaee.hw5.repository.entity.Book;
 
 import java.util.ArrayList;
 
+@Deprecated
 class Storage {
 
     private static ArrayList<Book> books=new ArrayList<>();

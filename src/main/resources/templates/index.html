@@ -7,18 +7,18 @@
 <body>
 <table border="1" width="100%">
     <thead>
+    <td >ID </td>
     <td>Назва книги</td>
     <td>ISBN</td>
     <td>Автор</td>
     </thead>
     <tr th:each="book: ${bookStorage}">
-        <td th:text="${book.title}"/>
+        <td th:text="${book.id}"/>
+        <td><a th:href="@{/book-info(id=${book.id})}" ) th:text="${book.title}"></a></td>
         <td th:text="${book.ibsn}"/>
         <td th:text="${book.author}"/>
     </tr>
 </table>
-<!--<p th:text="'id: ' + ${book.title}" />-->
-<!--<p th:text="'content: ' + ${book.author}" />-->
 <br>
 </body>
 </html>
