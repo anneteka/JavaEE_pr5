@@ -22,6 +22,10 @@ public class IndexController {
         this.bookService = bookService;
     }
 
+    @RequestMapping("")
+    public String base(){
+        return "redirect:/booklist";
+    }
     @RequestMapping("/booklist")
     public String booklist(Model model) {
         model.addAttribute("bookStorage", bookService.findAll());
