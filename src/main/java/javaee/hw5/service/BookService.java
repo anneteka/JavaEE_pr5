@@ -18,19 +18,31 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public Book save(Book book){
+    public Book save(Book book) {
         return bookRepository.save(book);
     }
 
-    public List<Book> findAll(){
+    public List<Book> findAll() {
         return bookRepository.findAll();
     }
 
-    public Optional<Book> findById(int id){
+    public Optional<Book> findById(int id) {
         return bookRepository.findById(id);
     }
 
-    public List<Book> findAllByIbsnOrTitle(String ibsnOrTitle){
-        return bookRepository.findAllByIbsnOrTitle(ibsnOrTitle, ibsnOrTitle);
+    public List<Book> findAllByIbsnOrTitle(String isbnOrTitle) {
+        return bookRepository.findAllByIsbnOrTitle(isbnOrTitle, isbnOrTitle);
+    }
+
+    public List<Book> findAllByAuthor(String author){
+        return bookRepository.findAllByAuthor(author);
+    }
+
+    public List<Book> findAllByTitle(String title){
+        return bookRepository.findAllByTitle(title);
+    }
+
+    public List<Book> findAllByIsbn(String isbn){
+        return bookRepository.findAllByIsbn(isbn);
     }
 }

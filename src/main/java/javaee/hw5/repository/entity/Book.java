@@ -22,14 +22,14 @@ public class Book {
     @NotNull
     private String author;
     @NotNull
-    private String ibsn;
+    private String isbn;
 
     public Book() {
     }
 
-    public Book(String title, String author, String ibsn) {
+    public Book(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
-        this.ibsn = ibsn;
+        this.isbn = isbn;
     }
 }

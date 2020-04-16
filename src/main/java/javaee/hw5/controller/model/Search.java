@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 @Setter
 @ToString
 @Service
+@Deprecated
 public class Search {
     private String searchString;
 
