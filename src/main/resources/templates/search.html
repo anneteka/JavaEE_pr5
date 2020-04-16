@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Title</title>
 </head>
 <body>
 <a href="/books"> Додати книгу або знайти книгу </a><br>
-
+<a href="/booklist"> На головну </a>
 <table border="1" width="100%">
     <thead>
     <td >ID </td>
@@ -21,6 +21,5 @@
         <td th:text="${book.author}"/>
     </tr>
 </table>
-<br>
 </body>
 </html>

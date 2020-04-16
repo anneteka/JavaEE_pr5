@@ -1,4 +1,5 @@
 package javaee.hw5.controller;
+import javaee.hw5.controller.model.Search;
 import javaee.hw5.repository.entity.Book;
 import javaee.hw5.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,16 +30,16 @@ public class IndexController {
     @RequestMapping("/booklist")
     public String booklist(Model model) {
         model.addAttribute("bookStorage", bookService.findAll());
-        model.addAttribute("ibsnOrTitle", "");
+
         return "index";
     }
 
     @RequestMapping("/search")
-    public String search(@ModelAttribute String ibsnOrTitle, Model model){
-        model.addAttribute("bookStorage", bookService.findAllByIbsnOrTitle(ibsnOrTitle));
-        model.addAttribute("ibsnOrTitle", "");
-        return "index";
+    public String search(@ModelAttribute(name = "search") Search search, Model model){
+        model.addAttribute("bookStorage", bookService.findAllByIbsnOrTitle(search.getSearchString()));
+        return "search";
     }
+
     @PostMapping("/add-book")
     public String myPost(@ModelAttribute("book") Book book, Model model) {
         bookService.save(book);
@@ -48,6 +49,7 @@ public class IndexController {
     @GetMapping("/books")
     public String myBooks(Model model) {
         model.addAttribute("book", new Book());
+        model.addAttribute("search", new Search());
         return "books";
     }
 
