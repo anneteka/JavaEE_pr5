@@ -29,9 +29,16 @@ public class IndexController {
     @RequestMapping("/booklist")
     public String booklist(Model model) {
         model.addAttribute("bookStorage", bookService.findAll());
+        model.addAttribute("ibsnOrTitle", "");
         return "index";
     }
 
+    @RequestMapping("/search")
+    public String search(@ModelAttribute String ibsnOrTitle, Model model){
+        model.addAttribute("bookStorage", bookService.findAllByIbsnOrTitle(ibsnOrTitle));
+        model.addAttribute("ibsnOrTitle", "");
+        return "index";
+    }
     @PostMapping("/add-book")
     public String myPost(@ModelAttribute("book") Book book, Model model) {
         bookService.save(book);

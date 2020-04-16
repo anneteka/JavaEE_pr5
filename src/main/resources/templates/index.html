@@ -5,6 +5,11 @@
     <title>Index</title>
 </head>
 <body>
+<a href=""> Додати книгу </a><br>
+<form th:action="@{/search}">
+    Пошук по ISBN або НАЗВІ : <input type="text"  th:field="*{ibsnOrTitle}" name="ibsnOrTitle" id="ibsnOrTitle"><br>
+    <input type="submit" value="Submit">
+</form>
 <table border="1" width="100%">
     <thead>
     <td >ID </td>
