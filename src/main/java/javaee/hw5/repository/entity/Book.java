@@ -32,4 +32,7 @@ public class Book {
         this.author = author;
         this.isbn = isbn;
     }
+
+    public Book(int id, String title, String author, String isbn) {
+    }
 }
