@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="signupForm">
+    <input type="text" placeholder="Enter Login Here" name="login"/><br>
+    <input type="password" placeholder="Enter Password Here" name="password"/><br>
+    <input type="submit" value="Sign Up"/><br>
+    <div id="message"></div>
+</form>
+<script>
+    $(function() {
+
+        $('#signupForm').submit(function(e) {
+            e.preventDefault();
+            console.log("registering");
+            $.ajax({
+                type: 'POST',
+                url: '/signup',
+                data: JSON.stringify({
+                    login: $(this).find('[name=login]').val(),
+                    password: $(this).find('[name=password]').val()
+                }),
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Content-Type', 'application/json')
+                },
+                success: function (r) {
+                    location.href = "/login";
+                },
+                error: function (r) {
+                    $('#message').text(r.responseText);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
